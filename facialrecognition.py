@@ -11,7 +11,7 @@ slurs = {"asian": "Hello my chinky chongy laoganma eating taonmia looking chigga
           "black": "Hello my silly fried chicken, watermelon eating hellcat driving nigger", 
           "white": "White chigga detected, white chigga detected. heil to the superior race", 
           "middle eastern": "Hello my sand wandering plane-tower colliding nigger", 
-          "latino hispanic": "Go back to home depot and you better start training for some track and field to get over the border"}
+          "latino hispanic": "you better start training for some track and field to get over the border"}
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
 actual_dominant = ""
