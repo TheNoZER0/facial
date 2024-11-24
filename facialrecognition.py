@@ -1,21 +1,12 @@
 import cv2
 from deepface import DeepFace
-from gtts import gTTS
-import os
-import pygame
-import pyttsx3
+from playsound import playsound
 
 races = {"asian": 0, "indian": 0, "black": 0, "white": 0, "middle eastern": 0, "latino hispanic": 0}
-slurs = {"asian": "Hello my chinky chongy laoganma eating taonmia looking chigga", 
-          "indian": "Special discount black friday sale, deodrant for sale 2 for 1 curry special", 
-          "black": "Hello my silly fried chicken, watermelon eating hellcat driving nigger", 
-          "white": "White chigga detected, white chigga detected. heil to the superior race", 
-          "middle eastern": "Hello my sand wandering plane-tower colliding nigger", 
-          "latino hispanic": "you better start training for some track and field to get over the border"}
+slurs = {"asian": "asian", "indian": "indian", "black": "black", "white": "white", "middle eastern": "middle_eastern", "latino hispanic": "latino"}
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
 actual_dominant = ""
-actual_slur = ""
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()
@@ -42,13 +33,13 @@ while True:
 
                     # Check if the current race count exceeds 10
                     if races[dominant_race] > 10:
-                        actual_dominant = races[dominant_race]
-                        print(f"{dominant_race} detected with confidence {race_confidence}")
+                        actual_dominant = dominant_race
+                        print(f"{actual_dominant} detected with confidence {race_confidence}")
                         
                         exit_flag = True
-                        actual_dominant = races[dominant_race]
+                        
               
-                        actual_slur = slurs[dominant_race]
+                        #actual_slur = slurs[dominant_race]
                         
                 
                         cap.release()
@@ -86,13 +77,13 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release the capture and close windows
-engine = pyttsx3.init()
-rate = 150
-speaking_rate = engine.setProperty('rate', rate)
-voice = engine.getProperty('voices')
-engine.setProperty('voice', voice[2].id)
-engine.say(actual_slur)
-engine.runAndWait()
+#Play the slur
+
+slur = slurs[actual_dominant]
+print(slur)
+mp3_file = f"mp3sounds/{slur}.mp3"
+playsound(mp3_file)
+  
+
 cap.release()
 cv2.destroyAllWindows()

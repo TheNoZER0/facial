@@ -11,7 +11,8 @@ pip install deepface
 pip install opencv-python
 sudo apt-get install alsa-utils
 sudo apt-get install espeak
-pip install pyttsx3
+sudo apt-get install -y python3-gi gir1.2-gstreamer-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav
+pip install playsound
 ```
 
 ## Usage
