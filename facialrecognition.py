@@ -9,7 +9,7 @@ races = {"asian": 0, "indian": 0, "black": 0, "white": 0, "middle eastern": 0, "
 slurs = {"asian": "Hello my chinky chongy laoganma eating taonmia looking chigga", 
           "indian": "Special discount black friday sale, deodrant for sale 2 for 1 curry special", 
           "black": "Hello my silly fried chicken, watermelon eating hellcat driving nigger", 
-          "white": "Sieg heil to the supreme race", 
+          "white": "White chigga detected, white chigga detected. heil to the superior race", 
           "middle eastern": "Hello my sand wandering plane-tower colliding nigger", 
           "latino hispanic": "Go back to home depot and you better start training for some track and field to get over the border"}
 # Initialize the webcam
@@ -88,7 +88,7 @@ while True:
 
 # Release the capture and close windows
 engine = pyttsx3.init()
-rate = 140
+rate = 150
 speaking_rate = engine.setProperty('rate', rate)
 voice = engine.getProperty('voices')
 engine.setProperty('voice', voice[2].id)
